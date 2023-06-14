@@ -7,15 +7,24 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
+import { ThemeProvider, createTheme } from '@mui/material';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/my-course-react-hw-08-phonebook">
-          <ScopedCssBaseline>
-            <App />
-          </ScopedCssBaseline>
+          <ThemeProvider theme={darkTheme}>
+            <ScopedCssBaseline>
+              <App />
+            </ScopedCssBaseline>
+          </ThemeProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>{' '}

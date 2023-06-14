@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { NavigationMenuMobile } from 'components/NavigationMenu/NavigationMenuMobile';
 import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
-import { Search } from 'components/Search/Search';
 
 export const PhonebookAppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -16,7 +15,6 @@ export const PhonebookAppBar = () => {
         <Toolbar disableGutters>
           <NavigationMenuMobile isLoggedIn={isLoggedIn} />
           <NavigationMenu isLoggedIn={isLoggedIn} />
-          <Search />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Toolbar>
       </Container>

@@ -1,9 +1,10 @@
-import { Avatar, Box, IconButton, Tooltip } from '@mui/material';
+import { Avatar, IconButton, Tooltip } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
+import { Search } from 'components/Search/Search';
 
 export const UserMenu = () => {
   const { name } = useSelector(selectUser);
@@ -13,11 +14,10 @@ export const UserMenu = () => {
   };
   return (
     <>
-      <Box sx={{ flexGrow: 0, ml: 1 }}>
-        <Tooltip title={name}>
-          <Avatar>{name[0]}</Avatar>
-        </Tooltip>
-      </Box>
+      <Search />
+      <Tooltip title={name}>
+        <Avatar>{name[0]}</Avatar>
+      </Tooltip>
       <IconButton
         component={NavLink}
         to="/"

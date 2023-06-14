@@ -1,4 +1,4 @@
-// import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ButtonAdd } from 'components/ButtonAdd/ButtonAdd';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -12,8 +12,8 @@ const Contacts = () => {
   }, [dispatch]);
   return (
     <>
-      {/* <ContactForm /> */}
       <ContactsList />
+      <ButtonAdd />
     </>
   );
 };

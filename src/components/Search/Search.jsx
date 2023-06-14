@@ -15,7 +15,7 @@ export const Search = () => {
     dispatch(setContactsFilter(e.target.value));
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, mr: 1 }}>
       <SearchWrap>
         <SearchIconWrapper>
           <SearchIcon />

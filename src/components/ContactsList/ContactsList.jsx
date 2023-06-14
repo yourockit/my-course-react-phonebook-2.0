@@ -33,14 +33,8 @@ export const ContactsList = () => {
               <ListSubheader sx={{ bgcolor: 'background.paper' }}>
                 {symbol}
               </ListSubheader>
-              <ListItem>
-                <List
-                  sx={{
-                    width: '100%',
-                    maxWidth: 360,
-                    bgcolor: 'background.paper',
-                  }}
-                >
+              <ListItem sx={{ p: 0 }}>
+                <List sx={{ width: '100%', p: 0 }}>
                   {contacts.map(({ id, name, number }) => (
                     <li key={id}>
                       <ListItem button alignItems="flex-start">
