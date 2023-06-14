@@ -1,80 +1,22 @@
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Menu,
-  Container,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar, Container } from '@mui/material';
 import { AuthNav } from 'components/AuthNav/AuthNav';
-import { Navigation } from 'components/Navigation/Navigation';
-import { NavigationMobile } from 'components/Navigation/NavigationMobile';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { useState } from 'react';
+import { NavigationMenuMobile } from 'components/NavigationMenu/NavigationMenuMobile';
+import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
+import { Search } from 'components/Search/Search';
 
 export const PhonebookAppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const [anchorElNav, setAnchorElNav] = useState(null);
-
-  const handleOpenNavMenu = event => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ p: 0 }}>
         <Toolbar disableGutters>
-          {isLoggedIn ? (
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                <NavigationMobile
-                  isLoggedIn={isLoggedIn}
-                  onClose={handleCloseNavMenu}
-                />
-              </Menu>
-            </Box>
-          ) : (
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <Navigation isLoggedIn={isLoggedIn} />
-            </Box>
-          )}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Navigation isLoggedIn={isLoggedIn} />
-          </Box>
+          <NavigationMenuMobile isLoggedIn={isLoggedIn} />
+          <NavigationMenu isLoggedIn={isLoggedIn} />
+          <Search />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Toolbar>
       </Container>

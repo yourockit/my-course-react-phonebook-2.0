@@ -1,4 +1,5 @@
-import { Button } from '@mui/material';
+import { Avatar, Box, Button, IconButton, Tooltip } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { signOut } from 'redux/auth/operations';
@@ -12,17 +13,21 @@ export const UserMenu = () => {
   };
   return (
     <>
-      <p> {name}</p>
-      <Button
-        type="submit"
-        variant="text"
-        color="inherit"
+      <Box sx={{ flexGrow: 0, ml: 1 }}>
+        <Tooltip title={name}>
+          <Avatar>{name[0]}</Avatar>
+        </Tooltip>
+      </Box>
+      <IconButton
+        size="large"
+        aria-label="account of current user"
+        aria-controls="menu-appbar"
+        aria-haspopup="true"
         onClick={handleClick}
-        component={NavLink}
-        to="/"
+        color="inherit"
       >
-        Sign out
-      </Button>
+        <LogoutIcon />
+      </IconButton>
     </>
   );
 };

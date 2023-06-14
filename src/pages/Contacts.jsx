@@ -12,7 +12,7 @@ const Contacts = () => {
   }, [dispatch]);
   return (
     <>
-      <ContactForm />
+      {/* <ContactForm /> */}
       <ContactsList />
     </>
   );
