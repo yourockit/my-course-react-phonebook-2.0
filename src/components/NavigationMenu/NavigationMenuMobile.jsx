@@ -54,16 +54,14 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
             >
               Home
             </MenuItem>
-            {isLoggedIn && (
-              <MenuItem
-                color="inherit"
-                component={NavLink}
-                to="/contacts"
-                onClick={handleCloseNavMenu}
-              >
-                Contacts
-              </MenuItem>
-            )}
+            <MenuItem
+              color="inherit"
+              component={NavLink}
+              to="/contacts"
+              onClick={handleCloseNavMenu}
+            >
+              Contacts
+            </MenuItem>
           </Menu>
         </Box>
       ) : (
@@ -71,11 +69,6 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
           <Button color="inherit" component={NavLink} to="/">
             Home
           </Button>
-          {isLoggedIn && (
-            <Button color="inherit" component={NavLink} to="/contacts">
-              Contacts
-            </Button>
-          )}
         </Box>
       )}
     </>

@@ -1,8 +1,10 @@
+import { HomeInfo } from '../components/HomeInfo/HomeInfo';
+
 const Home = () => {
   return (
-    <>
-      <h1>Phonebook welcome page</h1>
-    </>
+    <main>
+      <HomeInfo />
+    </main>
   );
 };
 

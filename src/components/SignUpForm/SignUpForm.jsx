@@ -7,11 +7,17 @@ export const SignUpForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const userName = data.get('username');
+    const email = data.get('email');
+    const password = data.get('password');
+    if (!email || !password || !userName) {
+      return;
+    }
     dispatch(
       signUp({
-        name: data.get('username'),
-        email: data.get('email'),
-        password: data.get('password'),
+        name: userName,
+        email: email,
+        password: password,
       })
     );
   };
@@ -48,7 +54,6 @@ export const SignUpForm = () => {
             label="Email Address"
             name="email"
             autoComplete="off"
-            autoFocus
           />
           <TextField
             margin="normal"
