@@ -51,12 +51,12 @@ export const ContactsList = () => {
                   }}
                 >
                   {contacts.map(({ id, name, number }) => (
-                    <Fragment key={id}>
+                    <li key={id}>
                       <ListItem button alignItems="flex-start">
                         <Contact id={id} name={name} number={number} />
                       </ListItem>
                       <Divider variant="inset" />
-                    </Fragment>
+                    </li>
                   ))}
                 </List>
               </ListItem>
