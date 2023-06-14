@@ -1,9 +1,9 @@
-import { Avatar, Box, Button, IconButton, Tooltip } from '@mui/material';
+import { Avatar, Box, IconButton, Tooltip } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { signOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
+import { NavLink } from 'react-router-dom';
 
 export const UserMenu = () => {
   const { name } = useSelector(selectUser);
@@ -19,6 +19,8 @@ export const UserMenu = () => {
         </Tooltip>
       </Box>
       <IconButton
+        component={NavLink}
+        to="/"
         size="large"
         aria-label="account of current user"
         aria-controls="menu-appbar"

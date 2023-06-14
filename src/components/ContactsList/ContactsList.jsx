@@ -1,13 +1,4 @@
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListSubheader,
-  Paper,
-  Typography,
-} from '@mui/material';
+import { Divider, List, ListItem, ListSubheader, Paper } from '@mui/material';
 import { Contact } from 'components/Contact/Contact';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';

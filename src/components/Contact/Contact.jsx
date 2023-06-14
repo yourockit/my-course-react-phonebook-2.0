@@ -4,12 +4,11 @@
 import {
   Avatar,
   ListItemAvatar,
-  ListItemButton,
   ListItemText,
   Typography,
 } from '@mui/material';
 
-export const Contact = ({ id, name, number }) => {
+export const Contact = ({ name, number }) => {
   // const dispatch = useDispatch();
   // const handleDelete = () => dispatch(deleteContact(id));
 
@@ -30,15 +29,12 @@ export const Contact = ({ id, name, number }) => {
             >
               {name}
             </Typography>
+            {/* <button type="button" onClick={handleDelete}>
+        Delete
+      </button>  */}
           </>
         }
       />
     </>
   );
 };
-
-{
-  /* <button type="button" onClick={handleDelete}>
-        Delete
-      </button>  */
-}
