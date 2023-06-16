@@ -1,40 +1,37 @@
-// import { useDispatch } from 'react-redux';
-// import { deleteContact } from 'redux/contacts/operations';
-
 import {
   Avatar,
+  Collapse,
+  Divider,
   ListItemAvatar,
+  ListItemButton,
   ListItemText,
-  Typography,
 } from '@mui/material';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
+import { useState } from 'react';
 
-export const Contact = ({ name, number }) => {
-  // const dispatch = useDispatch();
-  // const handleDelete = () => dispatch(deleteContact(id));
+export const Contact = ({ contacts }) => {
+  const [selectedContact, setSelectedContact] = useState(null);
+
+  const handleClick = id => {
+    setSelectedContact(id === selectedContact ? null : id);
+  };
 
   return (
     <>
-      <ListItemAvatar>
-        <Avatar>{name[0]}</Avatar>
-      </ListItemAvatar>
-      <ListItemText
-        primary={number}
-        secondary={
-          <>
-            <Typography
-              sx={{ display: 'inline' }}
-              component="span"
-              variant="body2"
-              color="text.primary"
-            >
-              {name}
-            </Typography>
-            {/* <button type="button" onClick={handleDelete}>
-        Delete
-      </button>  */}
-          </>
-        }
-      />
+      {contacts.map(({ id, name, number }) => (
+        <li key={id}>
+          <ListItemButton onClick={() => handleClick(id)}>
+            <ListItemAvatar>
+              <Avatar>{name[0]}</Avatar>
+            </ListItemAvatar>
+            <ListItemText>{name}</ListItemText>
+          </ListItemButton>
+          <Collapse in={selectedContact === id}>
+            <ContactDetails number={number} name={name} id={id} />
+          </Collapse>
+          <Divider variant="inset" />
+        </li>
+      ))}
     </>
   );
 };

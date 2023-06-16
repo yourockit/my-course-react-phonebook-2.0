@@ -14,8 +14,8 @@ export const SignInForm = () => {
     }
     dispatch(
       signIn({
-        email: email,
-        password: password,
+        email: 'Jokovich@mail.com',
+        password: 'Jokovich000',
       })
     );
   };
@@ -42,6 +42,7 @@ export const SignInForm = () => {
             label="Email Address"
             name="email"
             autoComplete="email"
+            value="Jokovich@mail.com"
             autoFocus
           />
           <TextField
@@ -53,6 +54,7 @@ export const SignInForm = () => {
             type="password"
             id="password"
             autoComplete="current-password"
+            value="Jokovich000"
           />
           <Button
             type="submit"
