@@ -12,7 +12,7 @@ export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
 
   //NUMBER-MASK===================
   const [inputValueNumber, setInputValueNumber] = useState({
-    value: '',
+    textmask: '',
   });
   const handleChange = event => {
     setInputValueNumber({
@@ -26,8 +26,7 @@ export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const valueName = data.get('name');
-    const valueNumber = inputValueNumber.value;
-    console.log(valueNumber);
+    const valueNumber = inputValueNumber.textmask;
     const contact = {
       name: valueName,
       number: valueNumber,
