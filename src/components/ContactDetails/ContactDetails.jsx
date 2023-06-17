@@ -25,8 +25,8 @@ export const ContactDetails = ({ number, id, name }) => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        spacing={2}
-        sx={{ mt: 1 }}
+        spacing={0}
+        sx={{ mt: 1, pr: 4 }}
       >
         <Fab
           variant="contained"

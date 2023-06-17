@@ -34,7 +34,7 @@ export const ContactsList = () => {
       {/* {symbol} */}
       {/* </ListSubheader> *
               <ListItem sx={{ p: 0 }}> */}
-      <List sx={{ width: '100%', p: 0 }}>
+      <List sx={{ p: 0, pr: 2 }}>
         <Contact contacts={filteredContacts} />
       </List>
       {/* </ListItem>

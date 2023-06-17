@@ -4,7 +4,10 @@ import { deleteContact } from 'redux/contacts/operations';
 
 export const DeleteContact = ({ id, name, onClose }) => {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+  const handleDelete = () => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <Box
       sx={{
