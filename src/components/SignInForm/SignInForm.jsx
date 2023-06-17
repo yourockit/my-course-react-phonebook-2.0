@@ -35,6 +35,7 @@ export const SignInForm = () => {
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
+            variant="standard"
             margin="normal"
             required
             fullWidth
@@ -43,9 +44,9 @@ export const SignInForm = () => {
             name="email"
             autoComplete="email"
             value="Jokovich@mail.com"
-            autoFocus
           />
           <TextField
+            variant="standard"
             margin="normal"
             required
             fullWidth

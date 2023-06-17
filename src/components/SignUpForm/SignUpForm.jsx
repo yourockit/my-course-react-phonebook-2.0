@@ -37,6 +37,7 @@ export const SignUpForm = () => {
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
+            variant="standard"
             margin="normal"
             required
             fullWidth
@@ -44,9 +45,9 @@ export const SignUpForm = () => {
             label="User name"
             name="username"
             autoComplete="off"
-            autoFocus
           />
           <TextField
+            variant="standard"
             margin="normal"
             required
             fullWidth
@@ -56,6 +57,7 @@ export const SignUpForm = () => {
             autoComplete="off"
           />
           <TextField
+            variant="standard"
             margin="normal"
             required
             fullWidth

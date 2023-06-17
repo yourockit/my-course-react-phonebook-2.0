@@ -3,16 +3,31 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { editContact, addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { FormattedInput } from './FormatedInput/FormatedInput';
+import { useState } from 'react';
 
 export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
+  //NUMBER-MASK===================
+  const [inputValueNumber, setInputValueNumber] = useState({
+    value: '',
+  });
+  const handleChange = event => {
+    setInputValueNumber({
+      ...inputValueNumber,
+      [event.name]: event.value,
+    });
+  };
+  //==============================
+
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const valueName = data.get('name');
-    const valueNumber = data.get('number');
+    const valueNumber = inputValueNumber.value;
+    console.log(valueNumber);
     const contact = {
       name: valueName,
       number: valueNumber,
@@ -52,6 +67,7 @@ export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
       <Typography variant="h7">{title}</Typography>
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
         <TextField
+          variant="standard"
           margin="normal"
           required
           fullWidth
@@ -60,20 +76,9 @@ export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
           name="name"
           type="text"
           autoComplete="off"
-          autoFocus
           defaultValue={name}
         />
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          name="number"
-          label="Number"
-          type="text"
-          id="number"
-          autoComplete="off"
-          defaultValue={number}
-        />
+        <FormattedInput number={number} onInputChange={handleChange} />
         <Stack
           direction="row"
           justifyContent="space-around"

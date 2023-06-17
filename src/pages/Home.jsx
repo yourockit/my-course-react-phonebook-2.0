@@ -2,9 +2,9 @@ import { HomeInfo } from '../components/HomeInfo/HomeInfo';
 
 const Home = () => {
   return (
-    <main>
+    <>
       <HomeInfo />
-    </main>
+    </>
   );
 };
 

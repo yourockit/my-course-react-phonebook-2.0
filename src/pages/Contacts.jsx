@@ -17,14 +17,14 @@ const Contacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <main>
+    <>
       <ContactsList />
       <ButtonAdd onOpen={handleOpen} />
       <Modal onOpen={open} onClose={handleClose}>
         <ContactForm onClose={handleClose} title="Add contact" />
       </Modal>
       <Toast />
-    </main>
+    </>
   );
 };
 

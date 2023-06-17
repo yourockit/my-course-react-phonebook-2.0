@@ -22,11 +22,13 @@ export const StyledBackdrop = styled(Backdrop)`
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   -webkit-tap-highlight-color: transparent;
 `;
 
 export const style = theme => ({
-  width: 400,
+  width: '70%',
+  maxWidth: 300,
   borderRadius: '12px',
   padding: '16px 32px 24px 32px',
   backgroundColor: theme.palette.mode === 'dark' ? '#0A1929' : 'white',
