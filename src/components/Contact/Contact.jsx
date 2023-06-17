@@ -21,10 +21,7 @@ export const Contact = ({ contacts }) => {
     <>
       {contacts.map(({ id, name, number }) => (
         <Container component="li" key={id} sx={{ p: 0 }}>
-          <ListItemButton
-            onClick={() => handleClick(id)}
-            sx={{ pl: 0, pr: 0, zIndex: 2 }}
-          >
+          <ListItemButton onClick={() => handleClick(id)} sx={{ pl: 0, pr: 0 }}>
             <ListItemAvatar>
               <Avatar>{name[0]}</Avatar>
             </ListItemAvatar>

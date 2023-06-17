@@ -1,13 +1,15 @@
 import AddIcon from '@mui/icons-material/Add';
-import { StyledFab, Wrapper } from './ButtonAdd.styled';
-// import { Container } from '@mui/material';
+import { Fab } from '@mui/material';
 
 export const ButtonAdd = ({ onOpen }) => {
   return (
-    <Wrapper maxWidth="xl">
-      <StyledFab color="primary" aria-label="add" onClick={onOpen}>
-        <AddIcon />
-      </StyledFab>
-    </Wrapper>
+    <Fab
+      color="primary"
+      aria-label="add"
+      onClick={onOpen}
+      sx={{ position: 'fixed', bottom: '1em', right: '1em', zIndex: 1 }}
+    >
+      <AddIcon />
+    </Fab>
   );
 };
