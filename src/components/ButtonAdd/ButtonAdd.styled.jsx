@@ -9,6 +9,6 @@ export const Wrapper = styled(Container)({
 
 export const StyledFab = styled(Fab)({
   zIndex: 1,
-  marginRight: '2em',
-  marginBottom: '2em',
+  marginRight: '1em',
+  marginBottom: '1em',
 });
