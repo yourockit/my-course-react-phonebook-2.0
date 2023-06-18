@@ -1,15 +1,31 @@
 import AddIcon from '@mui/icons-material/Add';
-import { Fab } from '@mui/material';
+import { Box, Container, Fab } from '@mui/material';
 
 export const ButtonAdd = ({ onOpen }) => {
   return (
-    <Fab
-      color="primary"
-      aria-label="add"
-      onClick={onOpen}
-      sx={{ position: 'fixed', bottom: '1em', right: '1em', zIndex: 1 }}
+    <Container
+      maxWidth="xl"
+      sx={{ height: 56, display: 'flex', justifyContent: 'end' }}
     >
-      <AddIcon />
-    </Fab>
+      <Box
+        sx={{
+          width: 56,
+          height: 56,
+        }}
+      >
+        <Fab
+          color="primary"
+          aria-label="add"
+          onClick={onOpen}
+          sx={{
+            position: 'fixed',
+            bottom: '0',
+            zIndex: 1,
+          }}
+        >
+          <AddIcon />
+        </Fab>
+      </Box>
+    </Container>
   );
 };

@@ -1,6 +1,5 @@
-import { Box, List } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { Contact } from 'components/Contact/Contact';
-// import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { getFilter } from 'redux/filterSlice';
@@ -14,31 +13,37 @@ export const ContactsList = () => {
   filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
 
   //GROUP-CONTACTS======================
-  // const groupedContacts = {};
-  // filteredContacts.map(contact => {
-  //   const firstLeter = contact.name[0].toUpperCase();
-  //   if (!groupedContacts[firstLeter]) {
-  //     groupedContacts[firstLeter] = [];
-  //   }
-  //   return groupedContacts[firstLeter].push(contact);
-  // });
+  const groupedContacts = {};
+  filteredContacts.map(contact => {
+    const firstLeter = contact.name[0].toUpperCase();
+    if (!groupedContacts[firstLeter]) {
+      groupedContacts[firstLeter] = [];
+    }
+    return groupedContacts[firstLeter].push(contact);
+  });
   //======================================
 
   return (
-    <Box pt={8}>
+    <Box pt={{ xs: 8, sm: 10 }}>
       {/* <List>
         {Object.entries(groupedContacts).map(([symbol, contacts]) => {
           return (
-            <Fragment key={symbol}>
-              {/* <ListSubheader sx={{ bgcolor: 'background.paper' }}> */}
-      {/* {symbol} */}
-      {/* </ListSubheader> *
-              <ListItem sx={{ p: 0 }}> */}
-      <List sx={{ p: 0, pr: 2 }}>
+            <ListItem
+              key={symbol}
+              sx={{ flexDirection: 'column', alignItems: 'start', p: 0 }}
+            >
+              <ListSubheader component="span" sx={{ bgcolor: 'transparent' }}>
+                {symbol}
+              </ListSubheader> */}
+      <Grid
+        component="ul"
+        container
+        spacing={{ xs: 1, md: 2 }}
+        columns={{ xs: 4, sm: 4, md: 12 }}
+      >
         <Contact contacts={filteredContacts} />
-      </List>
+      </Grid>
       {/* </ListItem>
-            </Fragment>
           );
         })}
       </List> */}

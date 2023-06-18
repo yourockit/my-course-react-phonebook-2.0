@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Fab } from '@mui/material';
+import { Box, Stack, Fab } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { Modal } from 'components/Modal/Modal';
@@ -18,9 +18,6 @@ export const ContactDetails = ({ number, id, name }) => {
 
   return (
     <Box sx={{ p: 2, pt: 0 }}>
-      <Typography variant="h7" sx={{ ml: 7 }}>
-        Tel: {number}
-      </Typography>
       <Stack
         direction="row"
         justifyContent="space-around"

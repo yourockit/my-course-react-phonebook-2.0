@@ -1,8 +1,8 @@
 import {
   Avatar,
   Collapse,
-  Container,
   Divider,
+  Grid,
   ListItemAvatar,
   ListItemButton,
   ListItemText,
@@ -20,18 +20,29 @@ export const Contact = ({ contacts }) => {
   return (
     <>
       {contacts.map(({ id, name, number }) => (
-        <Container component="li" key={id} sx={{ p: 0 }}>
-          <ListItemButton onClick={() => handleClick(id)} sx={{ pl: 0, pr: 0 }}>
+        <Grid
+          item
+          component="li"
+          key={id}
+          xs={4}
+          sm={2}
+          md={3}
+          sx={{ height: { sm: 153 } }}
+        >
+          <ListItemButton
+            onClick={() => handleClick(id)}
+            sx={{ pl: 0, pr: 0, zIndex: 1 }}
+          >
             <ListItemAvatar>
               <Avatar>{name[0]}</Avatar>
             </ListItemAvatar>
-            <ListItemText>{name}</ListItemText>
+            <ListItemText primary={name} secondary={number}></ListItemText>
           </ListItemButton>
           <Collapse in={selectedContact === id}>
             <ContactDetails number={number} name={name} id={id} />
           </Collapse>
           <Divider variant="inset" />
-        </Container>
+        </Grid>
       ))}
     </>
   );
