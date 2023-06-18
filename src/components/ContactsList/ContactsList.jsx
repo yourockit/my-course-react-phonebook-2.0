@@ -1,11 +1,11 @@
 import { Box, Grid } from '@mui/material';
 import { Contact } from 'components/Contact/Contact';
+import { useContacts } from 'hooks/useContacts';
 import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/contacts/selectors';
 import { getFilter } from 'redux/filterSlice';
 
 export const ContactsList = () => {
-  const contacts = useSelector(selectContacts);
+  const { contacts } = useContacts();
   const filter = useSelector(getFilter);
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
