@@ -12,29 +12,8 @@ export const ContactsList = () => {
   );
   filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
 
-  //GROUP-CONTACTS======================
-  const groupedContacts = {};
-  filteredContacts.map(contact => {
-    const firstLeter = contact.name[0].toUpperCase();
-    if (!groupedContacts[firstLeter]) {
-      groupedContacts[firstLeter] = [];
-    }
-    return groupedContacts[firstLeter].push(contact);
-  });
-  //======================================
-
   return (
     <Box pt={{ xs: 8, sm: 10 }}>
-      {/* <List>
-        {Object.entries(groupedContacts).map(([symbol, contacts]) => {
-          return (
-            <ListItem
-              key={symbol}
-              sx={{ flexDirection: 'column', alignItems: 'start', p: 0 }}
-            >
-              <ListSubheader component="span" sx={{ bgcolor: 'transparent' }}>
-                {symbol}
-              </ListSubheader> */}
       <Grid
         component="ul"
         container
@@ -43,10 +22,6 @@ export const ContactsList = () => {
       >
         <Contact contacts={filteredContacts} />
       </Grid>
-      {/* </ListItem>
-          );
-        })}
-      </List> */}
     </Box>
   );
 };

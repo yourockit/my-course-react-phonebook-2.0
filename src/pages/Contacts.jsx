@@ -7,14 +7,20 @@ import { Toast } from 'components/Toast/Toast';
 import { useContacts } from 'hooks/useContacts';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { fetchContacts } from 'redux/contacts/operations';
 
 const Contacts = () => {
   const dispatch = useDispatch();
   const { isLoading } = useContacts();
+  const { contactsError } = useContacts();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    contactsError && toast.error(contactsError);
+  }, [contactsError]);
 
   useEffect(() => {
     dispatch(fetchContacts());

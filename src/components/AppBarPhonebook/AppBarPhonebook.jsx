@@ -7,7 +7,7 @@ import { NavigationMenuMobile } from 'components/NavigationMenu/NavigationMenuMo
 import { NavigationMenu } from 'components/NavigationMenu/NavigationMenu';
 import { useLocation } from 'react-router-dom';
 
-export const PhonebookAppBar = () => {
+export const AppBarPhonebook = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { pathname } = useLocation();
 

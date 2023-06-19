@@ -7,6 +7,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { useAuth } from 'hooks/useAuth';
+import { SkeletonAppBar } from './SkeletonAppBar/SkeletonAppBar';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
@@ -22,7 +23,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <div></div>
+    <SkeletonAppBar />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
