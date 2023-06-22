@@ -1,15 +1,25 @@
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 export const AuthNav = () => {
   return (
-    <>
-      <Button component={NavLink} to="/signup" color="inherit">
+    <Stack spacing={1} direction="row">
+      <Button
+        component={NavLink}
+        to="/signup"
+        color="inherit"
+        variant="outlined"
+      >
         Sign up
       </Button>
-      <Button component={NavLink} to="/signin" color="inherit">
+      <Button
+        component={NavLink}
+        to="/signin"
+        color="inherit"
+        variant="outlined"
+      >
         Sign in
       </Button>
-    </>
+    </Stack>
   );
 };

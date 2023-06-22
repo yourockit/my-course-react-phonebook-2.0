@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Contact } from 'components/Contact/Contact';
 import { useContacts } from 'hooks/useContacts';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ export const ContactsList = () => {
   filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <Box pt={{ xs: 8, sm: 10 }}>
+    <>
       <Grid
         component="ul"
         container
@@ -22,6 +22,6 @@ export const ContactsList = () => {
       >
         <Contact contacts={filteredContacts} />
       </Grid>
-    </Box>
+    </>
   );
 };

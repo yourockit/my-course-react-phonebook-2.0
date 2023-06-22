@@ -3,7 +3,7 @@ import { Avatar, Box, Divider, Grid, Skeleton } from '@mui/material';
 export const SkeletonList = () => {
   const items = Array.from(Array(16).keys());
   return (
-    <Box pt={{ xs: 10, sm: 12 }} sx={{ maxWidth: 'xl' }}>
+    <Box sx={{ maxWidth: 'xl' }}>
       <Grid
         component="ul"
         container

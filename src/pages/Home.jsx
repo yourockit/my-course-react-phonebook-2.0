@@ -1,11 +1,11 @@
-import { HomeInfo } from '../components/HomeInfo/HomeInfo';
+import { Home } from '../components/Home/Home';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
-      <HomeInfo />
+      <Home />
     </>
   );
 };
 
-export default Home;
+export default HomePage;

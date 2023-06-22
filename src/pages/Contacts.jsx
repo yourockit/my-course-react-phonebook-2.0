@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { fetchContacts } from 'redux/contacts/operations';
 
-const Contacts = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
   const { isLoading } = useContacts();
   const { contactsError } = useContacts();
@@ -38,4 +38,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;
