@@ -17,7 +17,6 @@ export const AppBarPhonebook = () => {
     <AppBar
       position="fixed"
       sx={{
-        // background: 'transparent',
         backdropFilter: 'blur(8px)',
         boxShadow: 'none',
       }}

@@ -15,7 +15,13 @@ export const Home = () => {
           alignItems: 'center',
         }}
       >
-        <Typography align="center" variant="h4" mb={2}>
+        <Typography
+          align="center"
+          variant="h4"
+          mb={2}
+          fontWeight={700}
+          color="#fff"
+        >
           Phonebook welcome page
         </Typography>
         {isLoggedIn ? (
