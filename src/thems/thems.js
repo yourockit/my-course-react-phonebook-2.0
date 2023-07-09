@@ -26,5 +26,8 @@ export const contactTheme = createTheme({
       primary: '#333',
       secondary: '#666',
     },
+    action: {
+      focus: '#666',
+    },
   },
 });

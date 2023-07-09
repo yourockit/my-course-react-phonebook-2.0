@@ -22,7 +22,7 @@ export const DeleteContact = ({ id, name, onClose }) => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
-        spacing={8}
+        spacing={2}
         sx={{ mt: 3, mb: 2 }}
       >
         <Button
