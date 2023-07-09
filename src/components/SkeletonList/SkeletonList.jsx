@@ -31,7 +31,7 @@ export const SkeletonList = () => {
                     display: 'flex',
                     flexDirection: { sm: 'column' },
                     alignItems: { sm: 'center' },
-                    height: { sm: 216 },
+                    height: { sm: 200 },
                     width: { sm: 'calc((100vw - 96px) / 4)', md: 'auto' },
                     p: 2,
                   }}

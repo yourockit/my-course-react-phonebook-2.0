@@ -7,7 +7,7 @@ export const AuthNav = () => {
       <Button
         component={NavLink}
         to="/signup"
-        color="inherit"
+        color="buttonText"
         variant="outlined"
       >
         Sign up
@@ -15,7 +15,7 @@ export const AuthNav = () => {
       <Button
         component={NavLink}
         to="/signin"
-        color="inherit"
+        color="buttonText"
         variant="outlined"
       >
         Sign in

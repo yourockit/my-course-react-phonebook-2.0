@@ -23,13 +23,12 @@ export const ContactDetails = ({ number, id, name }) => {
         justifyContent="space-around"
         alignItems="center"
         spacing={0}
-        sx={{ mt: 1 }}
       >
         <Fab
           variant="contained"
           color="secondary"
           aria-label="edit"
-          size="medium"
+          size="small"
           onClick={() => handleOpen('edit')}
         >
           <EditIcon />
@@ -38,7 +37,7 @@ export const ContactDetails = ({ number, id, name }) => {
           variant="contained"
           color="secondary"
           aria-label="delete"
-          size="medium"
+          size="small"
           onClick={() => handleOpen('delete')}
         >
           <DeleteOutlineIcon />

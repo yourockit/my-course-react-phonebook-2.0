@@ -43,7 +43,7 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: 'block', md: 'none' },
+              display: { xs: 'block', sm: 'none' },
             }}
           >
             <MenuItem
@@ -65,7 +65,7 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
           </Menu>
         </Box>
       ) : (
-        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
           <Button color="inherit" component={NavLink} to="/">
             Home
           </Button>
