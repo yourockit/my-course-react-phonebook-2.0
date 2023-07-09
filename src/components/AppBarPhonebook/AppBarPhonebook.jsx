@@ -14,7 +14,14 @@ export const AppBarPhonebook = () => {
   const CONTACTS_LOCATION = '/contacts';
 
   return (
-    <AppBar position="fixed">
+    <AppBar
+      position="fixed"
+      sx={{
+        // background: 'transparent',
+        backdropFilter: 'blur(8px)',
+        boxShadow: 'none',
+      }}
+    >
       <Container maxWidth="xl" sx={{ p: 0 }}>
         <Toolbar disableGutters>
           <NavigationMenuMobile isLoggedIn={isLoggedIn} />

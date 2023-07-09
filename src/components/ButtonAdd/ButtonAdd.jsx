@@ -10,7 +10,7 @@ export const ButtonAdd = ({ onOpen }) => {
         }}
       >
         <Fab
-          color="primary"
+          color="secondary"
           aria-label="add"
           onClick={onOpen}
           sx={{

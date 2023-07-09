@@ -29,7 +29,7 @@ export const StyledBackdrop = styled(Backdrop)`
 export const style = theme => ({
   width: '70%',
   maxWidth: 300,
-  borderRadius: '12px',
+  borderRadius: 6,
   padding: '16px 32px 24px 32px',
   backgroundColor: theme.palette.mode === 'dark' ? '#0A1929' : 'white',
   boxShadow: `0px 2px 24px ${

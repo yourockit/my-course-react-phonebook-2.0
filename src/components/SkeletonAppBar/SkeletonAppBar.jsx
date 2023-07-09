@@ -10,23 +10,30 @@ import {
 
 export const SkeletonAppBar = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar
+      position="fixed"
+      sx={{
+        background: 'transparent',
+        backdropFilter: 'blur(8px)',
+        boxShadow: 'none',
+      }}
+    >
       <Container maxWidth="xl" sx={{ p: 0 }}>
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <Skeleton sx={{ width: 32, height: 40, ml: '1em' }} />
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
+            <Skeleton sx={{ width: 24, height: 40, ml: '1em' }} />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
             <Stack direction="row" spacing={2}>
               <Skeleton sx={{ width: 60, height: 40 }} />
-              <Skeleton sx={{ width: 60, height: 40 }} />
+              <Skeleton sx={{ width: 80, height: 40 }} />
             </Stack>
           </Box>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} mr={2}>
             <Skeleton variant="circular">
               <Avatar />
             </Skeleton>
-            <Skeleton sx={{ width: 32, height: 40 }} />
+            <Skeleton sx={{ width: 24, height: 40 }} />
           </Stack>
         </Toolbar>
       </Container>
