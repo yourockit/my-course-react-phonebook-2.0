@@ -19,7 +19,7 @@ export const Layout = () => {
   ) : (
     <>
       <AppBarPhonebook />
-      <Box pt={{ xs: 8, sm: 8 }}>
+      <Box pt={{ xs: 8, sm: 9 }}>
         <Container component="main" maxWidth="xl">
           <Suspense fallback={null}>
             <Outlet />

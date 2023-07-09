@@ -10,6 +10,7 @@ export const Home = () => {
     <>
       <Container
         sx={{
+          color: 'primary.contrastText',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -20,7 +21,7 @@ export const Home = () => {
           variant="h4"
           mb={2}
           fontWeight={700}
-          color="#fff"
+          color="inherit"
         >
           Phonebook welcome page
         </Typography>
@@ -30,8 +31,8 @@ export const Home = () => {
               Go to
             </Typography>
             <Button
-              color="buttonText"
               variant="outlined"
+              color="inherit"
               component={NavLink}
               to="/contacts"
             >

@@ -24,7 +24,7 @@ export const SkeletonAppBar = () => {
             <Skeleton sx={{ width: 24, height: 40, ml: '1em' }} />
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={4}>
               <Skeleton sx={{ width: 60, height: 40 }} />
               <Skeleton sx={{ width: 80, height: 40 }} />
             </Stack>

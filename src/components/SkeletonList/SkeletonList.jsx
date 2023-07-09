@@ -20,7 +20,7 @@ export const SkeletonList = () => {
         {items.map(arr => {
           const index = items.indexOf(arr);
           return (
-            <Grid item component="li" key={index} xs={4} sm={2} md={3}>
+            <Grid item component="li" key={index} xs={4} sm={1} md={3}>
               <Paper
                 sx={{
                   borderRadius: 6,

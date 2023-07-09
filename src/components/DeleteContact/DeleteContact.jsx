@@ -27,16 +27,16 @@ export const DeleteContact = ({ id, name, onClose }) => {
       >
         <Button
           type="submit"
-          variant="text"
-          color="secondary"
+          variant="outlined"
+          color="inherit"
           onClick={handleDelete}
         >
           Delete
         </Button>
         <Button
           type="button"
-          variant="text"
-          color="secondary"
+          variant="outlined"
+          color="inherit"
           onClick={() => onClose()}
         >
           Cancel

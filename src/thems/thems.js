@@ -6,7 +6,7 @@ export const contactTheme = createTheme({
       styleOverrides: {
         body: {
           backgroundColor: '#0f92bb',
-          backgroundImage: `linear-gradient(to top, #0f92bb, #78c4be 80%)`,
+          backgroundImage: `linear-gradient(6deg,  #78c4be, #0f92bb 70%)`,
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
         },
@@ -15,15 +15,16 @@ export const contactTheme = createTheme({
   },
   palette: {
     primary: {
-      main: '#78c4be',
-      contrastText: '#ffffff',
-    },
-    secondary: {
       main: '#0f92bb',
       contrastText: '#ffffff',
     },
-    buttonText: {
-      main: '#ffffff',
+    secondary: {
+      main: '#78c4be',
+      contrastText: '#ffffff',
+    },
+    text: {
+      primary: '#333',
+      secondary: '#666',
     },
   },
 });

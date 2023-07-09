@@ -25,13 +25,14 @@ export const SignUpForm = () => {
   return (
     <Container maxWidth="xs">
       <Box
+        color="primary.contrastText"
         sx={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <Typography component="h1" variant="h5" color="#fff">
+        <Typography component="h1" variant="h5">
           Sign up
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
@@ -69,7 +70,8 @@ export const SignUpForm = () => {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
+            variant="outlined"
+            color="inherit"
             sx={{ mt: 3, mb: 2 }}
           >
             Sign Up

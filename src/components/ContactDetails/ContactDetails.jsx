@@ -27,7 +27,7 @@ export const ContactDetails = ({ number, id, name }) => {
       >
         <Fab
           variant="contained"
-          color="secondary"
+          color="primary"
           aria-label="edit"
           size="small"
           onClick={() => handleOpen('edit')}
@@ -36,7 +36,7 @@ export const ContactDetails = ({ number, id, name }) => {
         </Fab>
         <Fab
           variant="contained"
-          color="secondary"
+          color="primary"
           aria-label="delete"
           size="small"
           onClick={() => handleOpen('delete')}

@@ -6,11 +6,11 @@ export const ButtonAdd = ({ onOpen }) => {
     <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'end' }}>
       <Box
         sx={{
-          width: 56,
+          width: 48,
         }}
       >
         <Fab
-          color="secondary"
+          size="medium"
           aria-label="add"
           onClick={onOpen}
           sx={{
@@ -19,7 +19,7 @@ export const ButtonAdd = ({ onOpen }) => {
             zIndex: 1,
           }}
         >
-          <AddIcon />
+          <AddIcon color="primary" sx={{ fontSize: 40 }} />
         </Fab>
       </Box>
     </Container>
