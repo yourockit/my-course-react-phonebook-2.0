@@ -32,30 +32,25 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
-              vertical: 'bottom',
+              vertical: 'top',
               horizontal: 'left',
             }}
             keepMounted
             transformOrigin={{
               vertical: 'top',
-              horizontal: 'left',
+              horizontal: 'right',
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
               display: { xs: 'block', sm: 'none' },
+              borderRadius: 6,
             }}
           >
-            <MenuItem
-              color="inherit"
-              component={NavLink}
-              to="/"
-              onClick={handleCloseNavMenu}
-            >
+            <MenuItem component={NavLink} to="/" onClick={handleCloseNavMenu}>
               Home
             </MenuItem>
             <MenuItem
-              color="inherit"
               component={NavLink}
               to="/contacts"
               onClick={handleCloseNavMenu}

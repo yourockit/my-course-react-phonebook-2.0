@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Container } from '@mui/material';
+import { AppBar, Toolbar, Container, Collapse } from '@mui/material';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
@@ -17,7 +17,6 @@ export const AppBarPhonebook = () => {
     <AppBar
       position="fixed"
       sx={{
-        backdropFilter: 'blur(8px)',
         boxShadow: 'none',
       }}
     >
@@ -25,7 +24,12 @@ export const AppBarPhonebook = () => {
         <Toolbar disableGutters>
           <NavigationMenuMobile isLoggedIn={isLoggedIn} />
           <NavigationMenu isLoggedIn={isLoggedIn} />
-          {pathname === CONTACTS_LOCATION && <Search />}
+          <Collapse
+            in={pathname === CONTACTS_LOCATION}
+            orientation="horizontal"
+          >
+            <Search />
+          </Collapse>
           {isLoggedIn ? <UserMenu location={pathname} /> : <AuthNav />}
         </Toolbar>
       </Container>

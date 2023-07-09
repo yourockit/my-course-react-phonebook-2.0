@@ -5,7 +5,7 @@ export const contactTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#0f92bb',
+          backgroundColor: '#78c4be',
           backgroundImage: `linear-gradient(6deg,  #78c4be, #0f92bb 70%)`,
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',

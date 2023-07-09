@@ -4,7 +4,7 @@ import { StyledBackdrop, StyledModal, style } from './Modal.styled';
 
 export const Modal = ({ onOpen, onClose, children }) => {
   return (
-    <div>
+    <>
       <StyledModal
         aria-labelledby="unstyled-modal-title"
         aria-describedby="unstyled-modal-description"
@@ -14,6 +14,6 @@ export const Modal = ({ onOpen, onClose, children }) => {
       >
         <Box sx={style}>{children}</Box>
       </StyledModal>
-    </div>
+    </>
   );
 };
