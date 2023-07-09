@@ -85,10 +85,15 @@ export const ContactForm = ({ id, name = '', number = '', title, onClose }) => {
           spacing={2}
           sx={{ mt: 3, mb: 2 }}
         >
-          <Button type="submit" variant="text">
+          <Button type="submit" variant="text" color="secondary">
             Save
           </Button>
-          <Button type="button" variant="text" onClick={() => onClose()}>
+          <Button
+            type="button"
+            variant="text"
+            color="secondary"
+            onClick={() => onClose()}
+          >
             Cancel
           </Button>
         </Stack>

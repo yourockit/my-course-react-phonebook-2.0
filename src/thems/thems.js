@@ -22,5 +22,8 @@ export const contactTheme = createTheme({
       main: '#0f92bb',
       contrastText: '#ffffff',
     },
+    contrastText: {
+      main: '#ffffff',
+    },
   },
 });

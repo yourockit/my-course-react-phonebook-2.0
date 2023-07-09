@@ -25,10 +25,20 @@ export const DeleteContact = ({ id, name, onClose }) => {
         spacing={8}
         sx={{ mt: 3, mb: 2 }}
       >
-        <Button type="submit" variant="text" onClick={handleDelete}>
+        <Button
+          type="submit"
+          variant="text"
+          color="secondary"
+          onClick={handleDelete}
+        >
           Delete
         </Button>
-        <Button type="button" variant="text" onClick={() => onClose()}>
+        <Button
+          type="button"
+          variant="text"
+          color="secondary"
+          onClick={() => onClose()}
+        >
           Cancel
         </Button>
       </Stack>

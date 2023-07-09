@@ -24,7 +24,7 @@ export const Home = () => {
               Go to
             </Typography>
             <Button
-              color="inherit"
+              color="contrastText"
               variant="outlined"
               component={NavLink}
               to="/contacts"
