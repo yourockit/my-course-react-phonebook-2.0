@@ -31,20 +31,10 @@ export const NavigationMenuMobile = ({ isLoggedIn }) => {
           <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
               display: { xs: 'block', sm: 'none' },
-              borderRadius: 6,
             }}
           >
             <MenuItem component={NavLink} to="/" onClick={handleCloseNavMenu}>

@@ -9,6 +9,7 @@ import { signOut } from 'redux/auth/operations';
 
 const initialState = {
   items: [],
+  status: null,
   isLoading: false,
   error: null,
 };
@@ -19,14 +20,17 @@ const contactsSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(fetchContacts.pending, (state, action) => {
+        state.status = 'loading';
         state.isLoading = true;
       })
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.items = action.payload;
+        state.status = 'loaded';
         state.isLoading = false;
         state.error = null;
       })
       .addCase(fetchContacts.rejected, (state, action) => {
+        state.status = 'error';
         state.isLoading = false;
         state.error = action.payload;
       })
