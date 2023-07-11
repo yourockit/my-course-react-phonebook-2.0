@@ -10,10 +10,13 @@ export const Home = () => {
     <>
       <Container
         sx={{
-          color: 'primary.contrastText',
           display: 'flex',
+          justifyContent: 'center',
           flexDirection: 'column',
           alignItems: 'center',
+          height: '100vh',
+          color: 'primary.contrastText',
+          mt: '-80px',
         }}
       >
         <Typography
