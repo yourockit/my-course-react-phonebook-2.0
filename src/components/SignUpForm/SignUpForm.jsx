@@ -22,6 +22,10 @@ export const SignUpForm = () => {
     );
   };
 
+  const inputTextStyles = {
+    color: 'inherit',
+  };
+
   return (
     <Container maxWidth="xs">
       <Box
@@ -45,6 +49,10 @@ export const SignUpForm = () => {
             label="User name"
             name="username"
             autoComplete="off"
+            color="secondary"
+            InputProps={{
+              style: inputTextStyles,
+            }}
           />
           <TextField
             variant="standard"
@@ -55,6 +63,10 @@ export const SignUpForm = () => {
             label="Email Address"
             name="email"
             autoComplete="off"
+            color="secondary"
+            InputProps={{
+              style: inputTextStyles,
+            }}
           />
           <TextField
             variant="standard"
@@ -66,6 +78,10 @@ export const SignUpForm = () => {
             type="password"
             id="password"
             autoComplete="off"
+            color="secondary"
+            InputProps={{
+              style: inputTextStyles,
+            }}
           />
           <Button
             type="submit"

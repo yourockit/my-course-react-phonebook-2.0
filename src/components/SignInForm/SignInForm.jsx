@@ -20,6 +20,10 @@ export const SignInForm = () => {
     );
   };
 
+  const inputTextStyles = {
+    color: 'inherit',
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -44,6 +48,10 @@ export const SignInForm = () => {
             name="email"
             autoComplete="email"
             value="Jokovich@mail.com"
+            color="secondary"
+            InputProps={{
+              style: inputTextStyles,
+            }}
           />
           <TextField
             variant="standard"
@@ -56,6 +64,10 @@ export const SignInForm = () => {
             id="password"
             autoComplete="current-password"
             value="Jokovich000"
+            color="secondary"
+            InputProps={{
+              style: inputTextStyles,
+            }}
           />
           <Button
             type="submit"
