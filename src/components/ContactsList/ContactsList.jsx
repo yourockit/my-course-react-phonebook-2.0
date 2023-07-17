@@ -24,8 +24,8 @@ export const ContactsList = () => {
         component="ul"
         container
         spacing={{ xs: 2, md: 2 }}
-        columns={{ xs: 4, sm: 4, md: 12 }}
-        sx={{ flexWrap: { sm: 'nowrap', md: 'wrap' }, pb: '56px' }}
+        columns={{ xs: 4, sm: 4, md: 8, lg: 12 }}
+        sx={{ flexWrap: { sm: 'nowrap', lg: 'wrap' }, pb: '56px' }}
       >
         <Contact contacts={filteredContacts} />
       </Grid>

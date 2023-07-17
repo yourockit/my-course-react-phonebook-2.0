@@ -21,10 +21,15 @@ export const Contact = ({ contacts }) => {
   return (
     <>
       {contacts.map(({ id, name, number }) => (
-        <Grid item component="li" key={id} xs={4} sm={1} md={3}>
+        <Grid item component="li" key={id} xs={4} sm={1} md={2} lg={3}>
           <Paper
             sx={{
-              width: { sm: 'calc((100vw - 96px) / 4)', md: 'auto' },
+              width: {
+                sm: 'calc((100vw - 96px) / 4)',
+                md: 'calc((100vw - 112px) / 5)',
+                lg: 'auto',
+              },
+              minHeight: { xs: 'auto', sm: '168px' },
               borderRadius: 6,
             }}
           >
@@ -57,11 +62,11 @@ export const Contact = ({ contacts }) => {
             </ListItemButton>
             <Collapse
               in={selectedContact === id}
-              sx={{ display: { xs: 'block', sm: 'none' } }}
+              sx={{ display: { xs: 'block', lg: 'none' } }}
             >
               <ContactDetails number={number} name={name} id={id} />
             </Collapse>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
               <ContactDetails number={number} name={name} id={id} />
             </Box>
           </Paper>
