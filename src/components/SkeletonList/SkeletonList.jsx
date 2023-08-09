@@ -14,13 +14,13 @@ export const SkeletonList = () => {
         component="ul"
         container
         spacing={{ xs: 2, md: 2 }}
-        columns={{ xs: 4, sm: 4, md: 12 }}
-        sx={{ flexWrap: { sm: 'nowrap', md: 'wrap' } }}
+        columns={{ xs: 4, sm: 4, md: 8, lg: 12 }}
+        sx={{ flexWrap: { sm: 'nowrap', lg: 'wrap' } }}
       >
         {items.map(arr => {
           const index = items.indexOf(arr);
           return (
-            <Grid item component="li" key={index} xs={4} sm={1} md={3}>
+            <Grid item component="li" key={index} xs={4} sm={1} md={2} lg={3}>
               <Paper
                 sx={{
                   borderRadius: 6,
@@ -31,8 +31,12 @@ export const SkeletonList = () => {
                     display: 'flex',
                     flexDirection: { sm: 'column' },
                     alignItems: { sm: 'center' },
-                    height: { sm: 200 },
-                    width: { sm: 'calc((100vw - 96px) / 4)', md: 'auto' },
+                    height: { sm: 168, lg: 200 },
+                    width: {
+                      sm: 'calc((100vw - 96px) / 4)',
+                      md: 'calc((100vw - 112px) / 5)',
+                      lg: 'auto',
+                    },
                     p: 2,
                   }}
                 >
