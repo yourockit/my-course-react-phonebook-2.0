@@ -1,12 +1,14 @@
+import { Linter } from "eslint";
 import js from "@eslint/js";
 import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
-export default [
+// ESLint configuration as a TypeScript file
+const config: Linter.Config[] = [
   {
-    files: ["**/*.{js,jsx}"],
+    files: ["**/*.{js,jsx,ts,tsx}"], // Support TypeScript files
     ignores: ["dist"],
     languageOptions: {
       ecmaVersion: 2020,
@@ -37,3 +39,5 @@ export default [
     },
   },
 ];
+
+export default config;
