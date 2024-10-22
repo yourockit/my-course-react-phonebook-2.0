@@ -1,14 +1,12 @@
-import { Linter } from "eslint";
 import js from "@eslint/js";
 import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
-// ESLint configuration as a TypeScript file
-const config: Linter.Config[] = [
+const config = [
   {
-    files: ["**/*.{js,jsx,ts,tsx}"], // Support TypeScript files
+    files: ["**/*.{js,jsx,ts,tsx}"],
     ignores: ["dist"],
     languageOptions: {
       ecmaVersion: 2020,
@@ -19,7 +17,9 @@ const config: Linter.Config[] = [
         sourceType: "module",
       },
     },
-    settings: { react: { version: "18.3" } },
+    settings: {
+      react: { version: "18.3" },
+    },
     plugins: {
       react,
       "react-hooks": reactHooks,
@@ -27,11 +27,11 @@ const config: Linter.Config[] = [
     },
     rules: {
       ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs["jsx-runtime"].rules,
-      ...reactHooks.configs.recommended.rules,
-      "react/prop-types": 0,
-      "react/jsx-no-target-blank": "off",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/react-in-jsx-scope": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
