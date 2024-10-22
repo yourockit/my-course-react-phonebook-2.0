@@ -3,6 +3,8 @@ import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import typescript from "@typescript-eslint/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
 
 const config = [
   {
@@ -11,6 +13,7 @@ const config = [
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: typescriptParser,
       parserOptions: {
         ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
@@ -24,6 +27,7 @@ const config = [
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      "@typescript-eslint": typescript,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -36,6 +40,8 @@ const config = [
         "warn",
         { allowConstantExport: true },
       ],
+      "@typescript-eslint/no-unused-vars": ["warn"],
+      "@typescript-eslint/explicit-module-boundary-types": "off",
     },
   },
 ];
